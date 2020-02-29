@@ -2,7 +2,7 @@
 
 body {
   background: #FAFAFA;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   font-size: 16px;
   color: #5D5D5D;
   font-family: Roboto, Helvetica, sans-serif;
@@ -17,8 +17,24 @@ body {
   height: 95px;
 }
 
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
 .font-14 {
   font-size: 14px;
+}
+
+.font-17 {
+  font-size: 17px;
+}
+
+.font-20 {
+  font-size: 20px;
 }
 
 .italic {
@@ -31,6 +47,10 @@ body {
 
 .bold {
   font-weight: 500;
+}
+
+.light {
+  font-weight: 300;
 }
 
 /* HEADER */
@@ -60,6 +80,7 @@ header {
 
 .page-location-container {
   background :#FFFFFF;
+  width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
@@ -75,7 +96,7 @@ header {
   margin: 0 5px;
 }
 
-.selected-page {
+.selected-item {
   color: #A7BEC5;
 }
 
@@ -85,25 +106,27 @@ header {
   position: relative;
   top: 95px;
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 .content {
   display: flex;
-  margin-top: 15px;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  width: 82.5%;
 }
 
 /* SIDEBAR */
 
 .sidebar-container {
-  width: 22.5%;
-  margin-left: 110px;
   display: flex;
   flex-direction: column;
+  width: 22.5%;
 }
 
 .sidebar-list {
-  padding: 25px;
+  margin-bottom: 50px;
 }
 
 .sidebar-item {
@@ -124,21 +147,20 @@ header {
 .calendar {
   background: #FFFFFF;
   box-shadow: 1px 2px 11px rgba(200, 200, 200, 0.34);
-  margin: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 120px;
 }
 
 .calendar-title-container {
   width: 100%;
-  background: linear-gradient(90deg, #C6DDE3 0%, rgba(7, 100, 124, 0.25) 100%);
+  background: linear-gradient(90deg, #C6DDE3, rgba(7, 100, 124, 0.25));
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 5px; */
 }
 
 .calendar-title {
@@ -155,8 +177,10 @@ header {
 .calendar-circle {
   background: #BF99DC;
   border-radius: 100%;
-  height: 10px;
-  width: 10px;
+  min-height: 10px;
+  min-width: 10px;
+  max-height: 10px;
+  max-width: 10px;
   margin: 17px 5px 5px 5px;
 }
 
@@ -167,11 +191,165 @@ header {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  height: 30px;
+  min-height: 30px;
 }
 
 
 /* POSTS CONTAINER */
+
+.posts-container {
+  width: 72.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-post {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px rgba(186, 186, 186, 0.25);
+  border: 1px solid #F4F4F4;
+  width: 77.5%;
+  margin-bottom: 30px;
+}
+
+.post-content {
+  padding: 0 25px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-question-date-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-profile-photo {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  margin: 0 15px;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+}
+
+.post-footer {
+  border-top: 0.75px solid #DFDFDF;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+.post-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.post-info > * {
+  margin: 0 5px;
+}
+
+.footer-arrows {
+  height: 20px;
+}
+
+.left-arrow {
+  transform: scaleX(-1);
+  margin-right: 2.5px;
+}
+
+.next-post {
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 15%;
+  min-width: 80px;
+}
+
+.next-post > * {
+  margin-left: 5px;
+}
+
+.post-icon {
+  height: 12.5px;
+}
+
+.post-replies-container {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px rgba(186, 186, 186, 0.25);
+  border: 1px solid #F4F4F4;
+  width: 77.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.add-reply-button-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.75px solid #DFDFDF;
+  width: 100%;
+}
+
+.replies-list-container {
+  width: 92.5%;
+}
+
+.reply {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reply-line {
+  border-bottom: 0.75px solid #D1D1D1;
+}
+
+.reply-author {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+
+.reply-profile-photo {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin: 0 15px;
+}
+
+.reply-likes {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.reply-text {
+
+}
+
+.reply-likes {
+
+}
+
+.reply-likes {
+
+}
+
 
 /* FOOTER */
 
