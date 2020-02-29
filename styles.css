@@ -59,10 +59,11 @@ header {
 }
 
 .page-location-container {
-  background: white;
-  height: 50px;
+  background :#FFFFFF;
+  height: 60px;
   display: flex;
   align-items: center;
+  box-shadow: 0px 4px 4px rgba(216, 216, 216, 0.25);
 }
 
 .page-location {
@@ -72,6 +73,10 @@ header {
 .location-arrow {
   height: 10px;
   margin: 0 5px;
+}
+
+.selected-page {
+  color: #A7BEC5;
 }
 
 /* MAIN SECTION */
@@ -85,6 +90,7 @@ header {
 
 .content {
   display: flex;
+  margin-top: 15px;
 }
 
 /* SIDEBAR */
@@ -206,5 +212,17 @@ footer {
 
 .footer-links > * {
   margin-bottom: 7.5px;
+}
+
+.email-address {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.mail-icon {
+  /* height: 10px; */
+  width: 15px;
+  margin-right: 5px;
 }
 
