@@ -38,28 +38,33 @@
     <div class="content">
       <div class="sidebar-container">
         <div class="sidebar-list">
-          <div class="uppercase sidebar-item">
-            <p>General</p>
+          <div class="sidebar-item">
+            <p class="uppercase">General</p>
             <img class="sidebar-arrow" src="./assets/desktop/arrow-single-down-black.png" alt="Down Arrow">
           </div>
-          <div class="uppercase sidebar-item">
-            <p>Producción</p>
+          <div class="sidebar-item">
+            <p class="uppercase">Producción</p>
             <img class="sidebar-arrow" src="./assets/desktop/arrow-single-down-black.png" alt="Down Arrow">
           </div>
-          <div class="uppercase sidebar-item">
-            <p>Ventas</p>
+          <div class="sidebar-item">
+            <p class="uppercase">Ventas</p>
             <img class="sidebar-arrow" src="./assets/desktop/arrow-single-down-black.png" alt="Down Arrow">
           </div>
-          <div class="uppercase sidebar-item">
-            <p>Diseño</p>
+          <div class="sidebar-item">
+            <p class="uppercase">Diseño</p>
             <img class="sidebar-arrow" src="./assets/desktop/arrow-single-down-black.png" alt="Down Arrow">
           </div>
-          <div class="uppercase sidebar-item">
-            <p>Code</p>
+          <div class="sidebar-item">
+            <p class="uppercase">Code</p>
             <img class="sidebar-arrow" src="./assets/desktop/arrow-single-down-black.png" alt="Down Arrow">
           </div>
-          <div class="uppercase sidebar-item">
-            <p>Administración</p>
+          <div class="sidebar-code-dropdown-content">
+            <a class="font-14">Backend</a>
+            <a class="font-14">Frontend</a>
+            <a class="font-14">Documentación</a>
+          </div>
+          <div class="sidebar-item">
+            <p class="uppercase">Administración</p>
           </div>
         </div>
 
@@ -96,13 +101,13 @@
           </div>
           <div class="post-footer">
             <div class="post-info">
-              <img class="post-icon" src="./assets/mobile/seen-black.png" alt="People Icon">
+              <img class="post-icon seen" src="./assets/mobile/seen-black.png" alt="People Icon">
               <p class="font-12 center-text">87 isnjdkfnsdf</p>
               <img class="post-icon" src="./assets/mobile/replies-black.png" alt="Reciprocal Arrow">
               <p class="font-12 center-text">49 respbukjdsf</p>
-              <img class="post-icon" src="./assets/mobile/like-black.png" alt="Likes Icon">
+              <img class="post-icon like" src="./assets/mobile/like-black.png" alt="Likes Icon">
               <p class="font-12 center-text">93</p>
-              <img class="post-icon" src="./assets/mobile/dislike-black.png" alt="Dislikes Icon">
+              <img class="post-icon dislike" src="./assets/mobile/dislike-black.png" alt="Dislikes Icon">
               <p class="font-12 center-text">38</p>
             </div>
             <div class="next-post">
@@ -115,49 +120,28 @@
           </div>
         </div>
         <div class="post-replies-container">
-          <div class="add-reply-button-container">
+          <div id="add-reply-button-container">
             <p class="font-20 bold selected-item">
               + Añadir Respuesta
             </p>
           </div>
-          <div class="replies-list-container">
-            <div class="reply reply-line">
-              <div class="reply-author">
-                <img class="reply-profile-photo" src="./assets/desktop/man-1.jpeg" alt="man">
-                <p class="font-20">Josep</p>
-              </div>
-              <p class="font-17 light">This is the first reply content. I am going to make this really really long
-                sanyway i can se what it would look like if
-                the
-                post was really really ong. Im hoping that the spacing will be find and that i wont have to o anything
-              </p>
-              <div class="reply-likes">
-                <img class="post-icon" src="./assets/mobile/like-black.png" alt="Likes Icon">
-                <p class="font-12 center-text">93</p>
-                <img class="post-icon" src="./assets/mobile/dislike-black.png" alt="Dislikes Icon">
-                <p class="font-12 center-text">38</p>
-              </div>
-            </div>
-            <div class="reply">
-              <div class="reply-author">
-                <img class="reply-profile-photo" src="./assets/desktop/man-2.jpg" alt="man 2">
-                <p class="font-20">Jamie</p>
-              </div>
-              <p class="font-17 light">This is the second reply content. I am going to make this really really long
-                sanyway i can se what it would look like if the
-                post was really really ong. Im hoping that the spacing will be find and that i wont have to o anything
-              </p>
-              <div class="reply-likes">
-                <img class="post-icon" src="./assets/mobile/like-black.png" alt="Likes Icon">
-                <p class="font-12 center-text">3</p>
-                <img class="post-icon" src="./assets/mobile/dislike-black.png" alt="Dislikes Icon">
-                <p class="font-12 center-text">23</p>
-              </div>
-            </div>
+          <div id="replies-list-container">
+          </div>
+        </div>
+
+        <div id="submit-reply-container">
+          <img id="cancel-reply-button" src="./assets/mobile/close-black.png" alt="Cancel Button">
+          <div class="submit-reply-form">
+            <textarea id="reply-textarea" placeholder="Escribe aquí tu respuesta."></textarea>
+            <button id="submit-reply-button">
+              <p class="bold submit-reply-button-text">Añadir comentario</p>
+              <img class="submit-reply-arrow " src="./assets/desktop/arrow-single-blue.png" alt="Long Right Arrow">
+            </button>
           </div>
         </div>
       </div>
       <!-- end of posts-container -->
+
 
     </div>
   </div>
