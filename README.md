@@ -19,7 +19,7 @@ npm install
 
 Correr el sitio web usando webpack o en modo desarrollo o modo producción:
 ```
-npm run start || npm run build
+npm run start
 ```
 
 Espero que os guste la página!
