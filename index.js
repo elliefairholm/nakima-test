@@ -1,33 +1,22 @@
 console.log('hello');
 
-// need to make the icons change when hovered over
-
-// need to allow a new post to be posted
-
-// need to make the form appear on clicking anadir respuesta
-// need the x button to work
-
-// on hover over code etc need to make the drop down content appear
-
 // need to make the menu for mobile work
 
 function loadEvents () {
   const addReplyFormButton = document.getElementById('add-reply-button-container');
   const closeReplyFormButton = document.getElementById('cancel-reply-button');
-
   const submitReplyButton = document.getElementById('submit-reply-button');
-
   const sideBarItems = document.getElementsByClassName('sidebar-item');
-
   const likes = document.getElementsByClassName('like');
-
   const dislikes = document.getElementsByClassName('dislike');
-
   const seenIcons = document.getElementsByClassName('seen');
+  const footerTitles = document.getElementsByClassName('footer-title');
+  const mobileMenuIcon = document.getElementById('menu-icon');
 
   if (addReplyFormButton) {
     addReplyFormButton.addEventListener('click', toggleAddReplyForm);
   }
+
   if (closeReplyFormButton) {
     closeReplyFormButton.addEventListener('click', toggleAddReplyForm);
   }
@@ -42,6 +31,7 @@ function loadEvents () {
       let el = sideBarItems[i];
       el.addEventListener('mouseenter', (e) => toggleSideBarDropdownContent(e));
       el.addEventListener('mouseleave', (e) => toggleSideBarDropdownContent(e));
+      el.addEventListener('click', (e) => toggleSideBarDropdownContent(e));
     }
   }
 
@@ -68,6 +58,19 @@ function loadEvents () {
       el.addEventListener('mouseleave', (e) => togglePostIcons(e))
     }
   }
+
+  if (footerTitles) {
+    for (let i = 0; i < footerTitles.length; i++) {
+      let el = footerTitles[i];
+      el.addEventListener('click', (e) => toggleFooterTitles(e));
+    }
+  }
+
+  if (mobileMenuIcon) {
+    console.log(mobileMenuIcon)
+    mobileMenuIcon.addEventListener('click', revealSideMenu);
+  }
+
 }
 
 function toggleAddReplyForm () {
@@ -105,6 +108,7 @@ function submitReply () {
 }
 
 function toggleSideBarDropdownContent (e) {
+  console.log('hello')
   const dropDownContent = e.target.nextElementSibling;
   const arrow = e.target.children[1]
 
@@ -128,7 +132,36 @@ function togglePostIcons (e) {
     element.style.height = '';
     element.src = `./assets/desktop/${status}-black.png`;
   }
+}
 
+function toggleFooterTitles (e) {
+  const footerTitle = e.target.classList[0];
+  console.log(footerTitle)
+  const footerLinks = document.getElementsByClassName(`${footerTitle} footer-links`)[0]
+  console.log(footerLinks)
+
+  if (!footerLinks.style.display) {
+    footerLinks.style.display = 'flex';
+  } else footerLinks.style.display = '';
+}
+
+function revealSideMenu () {
+  const sideMenu = document.getElementById('sidebar-container');
+  const header = document.getElementsByTagName('header')[0];
+  const mainSection = document.getElementsByClassName('main-section')[0];
+  if (!sideMenu.style.display) {
+    sideMenu.style.display = 'flex';
+    header.style['padding-left'] = '180px';
+    header.style.width = '100%';
+    mainSection.style['padding-left'] = '180px';
+    mainSection.style.width = '100%';
+  } else {
+    sideMenu.style.display = '';
+    header.style['padding-left'] = '';
+    header.style.width = '';
+    mainSection.style['padding-left'] = '';
+    mainSection.style.width = '';
+  };
 }
 
 loadEvents();
