@@ -1,5 +1,4 @@
 require('./posts')
-// need to make the menu for mobile work
 
 function loadEvents () {
   const addReplyFormButton = document.getElementById('add-reply-button-container');
@@ -25,7 +24,6 @@ function loadEvents () {
   }
 
   if (sideBarItems) {
-    console.log(sideBarItems)
     for (let i = 0; i < sideBarItems.length; i++) {
       let el = sideBarItems[i];
       el.addEventListener('mouseenter', (e) => toggleSideBarDropdownContent(e));
@@ -66,7 +64,6 @@ function loadEvents () {
   }
 
   if (mobileMenuIcon) {
-    console.log(mobileMenuIcon)
     mobileMenuIcon.addEventListener('click', revealSideMenu);
   }
 
@@ -89,15 +86,15 @@ function submitReply () {
   replyHTML.classList.add('reply');
   replyHTML.innerHTML = `<div class="reply-author">
     <img class="reply-profile-photo" src="./assets/desktop/man-1.jpeg" alt="man">
-      <p class="font-20">Josep</p>
+      <p class="font-20">Pau</p>
               </div>
     <p class="font-17 light">${textArea.value}
     </p>
     <div class="reply-likes">
       <img class="post-icon like" src="./assets/mobile/like-black.png" alt="Likes Icon">
-        <p class="font-12 center-text">93</p>
+        <p class="font-12 center-text">0</p>
         <img class="post-icon dislike" src="./assets/mobile/dislike-black.png" alt="Dislikes Icon">
-          <p class="font-12 center-text">38</p>
+          <p class="font-12 center-text">0</p>
               </div>`;
 
   if (repliesList.children.length) repliesList.lastChild.classList.add('reply-line');
@@ -107,7 +104,6 @@ function submitReply () {
 }
 
 function toggleSideBarDropdownContent (e) {
-  console.log('hello')
   const dropDownContent = e.target.nextElementSibling;
   const arrow = e.target.children[1]
 
@@ -135,9 +131,7 @@ function togglePostIcons (e) {
 
 function toggleFooterTitles (e) {
   const footerTitle = e.target.classList[0];
-  console.log(footerTitle)
   const footerLinks = document.getElementsByClassName(`${footerTitle} footer-links`)[0]
-  console.log(footerLinks)
 
   if (!footerLinks.style.display) {
     footerLinks.style.display = 'flex';
