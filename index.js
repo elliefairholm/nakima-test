@@ -1,5 +1,4 @@
-console.log('hello');
-
+require('./posts')
 // need to make the menu for mobile work
 
 function loadEvents () {
